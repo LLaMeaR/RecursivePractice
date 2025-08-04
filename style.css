@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#visual {
+  margin-top: 30px;
+}
+
+.box {
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  background: #2ecc71;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: opacity 0.4s ease;
+}
+
+.returning {
+  background: #f39c12 !important;
+}
