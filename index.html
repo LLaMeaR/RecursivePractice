@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>재귀 시각화</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>재귀 시각화: factorial(n)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>재귀 함수: factorial(n)</h1>
-  <button onclick="start()">시작 (n = 4)</button>
-  <div id="visual"></div>
+  <header class="page-header">
+    <h1>재귀 함수 시각화 — <code>factorial(n)</code></h1>
+    <p class="subtitle">호출 → 재귀 호출 → 반환 과정을 스택으로 눈으로 봅니다.</p>
+  </header>
+
+  <section class="controls" aria-label="실행 제어">
+    <div class="field">
+      <label for="inputN">n</label>
+      <input id="inputN" type="number" min="0" max="12" value="4" />
+      <small>0~12 권장 (너무 크면 시각화가 오래 걸려요)</small>
+    </div>
+
+    <div class="field">
+      <label for="speed">속도 (ms / 단계)</label>
+      <input id="speed" type="range" min="100" max="1200" step="50" value="600" />
+      <output id="speedOut" for="speed">600ms</output>
+    </div>
+
+    <div class="buttons">
+      <button id="runBtn" class="primary">시작</button>
+      <button id="pauseBtn" disabled>일시정지</button>
+      <button id="stepBtn" disabled>한 단계</button>
+      <button id="resetBtn" disabled>리셋</button>
+    </div>
+  </section>
+
+  <main class="layout">
+    <section class="panel" aria-label="호출 스택">
+      <h2>호출 스택</h2>
+      <div id="stack" class="stack"></div>
+    </section>
+
+    <section class="panel" aria-label="실행 로그">
+      <h2>실행 로그</h2>
+      <div id="trace" class="trace"></div>
+      <div id="result" class="result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <details>
+      <summary>설명 보기</summary>
+      <ul>
+        <li><b>시작</b>: 현재 설정으로 실행합니다.</li>
+        <li><b>일시정지</b>: 자동 진행을 멈추고, <b>한 단계</b>로 수동 진행합니다.</li>
+        <li><b>한 단계</b>: “호출”/“반환” 같은 단계 이벤트를 한 번씩 진행합니다.</li>
+        <li><b>리셋</b>: 현재 실행을 중단하고 화면을 초기화합니다.</li>
+      </ul>
+      <p><code>factorial(n)</code>은 <code>n &le; 1</code>이면 1을 반환하고, 그렇지 않으면 <code>n * factorial(n-1)</code>을 반환합니다.</p>
+    </details>
+  </footer>
 
   <script src="script.js"></script>
 </body>
