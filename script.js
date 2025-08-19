@@ -1,4 +1,4 @@
-// --------- DOM ---------
+// --------- DOM --------
 const $ = (sel) => document.querySelector(sel);
 const stackEl  = $('#stack');
 const traceEl  = $('#trace');
